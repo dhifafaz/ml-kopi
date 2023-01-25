@@ -12,7 +12,7 @@ image = np.array(image).reshape(1, 28, 28, 1)
 # normalized_image = cv.normalize(image, image, 0, 255, cv.NORM_MINMAX)
 data = json.dumps({"signature_name": "serving_default", "instances": image.tolist()})
 
-url = "http://localhost:8501/v1/models/cnn:predict"
+url = "http://47.250.128.109:8501/v1/models/cnn:predict"
 
 response = requests.post(url, data=data, headers={"content-type": "application/json"})
 
